@@ -22,7 +22,8 @@ We hope to introduce this new way of looking at application development so that 
 
 ## Server Responsibilities
 
- - Communicate with other DOSA server.
+ - Communicate with other DOSA servers.
  - Queue server requests.
  - Maintain distrubuted server lists.
- - Trigger events/requests to the appropriate application.
+ - Trigger events/requests to the appropriate server/application.
+ - User Authentication and management.
