@@ -12,10 +12,26 @@ namespace DOSA
     [ServiceContract]
     public interface IApplicationService
     {
+        #region Application Passthrough
+        // Passthrough allows DOSA to handle any existing registered applications REST services.
+        // Allowing a REST call to be made without the need of defining an action.
+
+        // URI Example: http://dosa.servername.net/ToDone
+        [OperationContract]
+        [WebInvoke(
+            Method = "POST",
+            UriTemplate = "{Application}",
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json
+            )]
+        bool PassthroughJSON(string Application, string Data);
+
+        #endregion
 
         #region Application Action
 
         #region JSON
+        // URI Example: http://dosa.servername.net/ToDone/CreateTask
         [OperationContract]
         [WebInvoke(
             Method = "POST",
