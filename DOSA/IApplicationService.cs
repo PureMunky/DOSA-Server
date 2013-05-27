@@ -8,10 +8,11 @@ using System.Text;
 
 namespace DOSA
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IApplicationService" in both code and config file together.
+
     [ServiceContract]
     public interface IApplicationService
     {
+
         #region Application Passthrough
         // Passthrough allows DOSA to handle any existing registered applications REST services.
         // Allowing a REST call to be made without the need of defining an action.
@@ -39,7 +40,7 @@ namespace DOSA
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json
             )]
-        bool ActionJSON(string Application, string Action, string Data);
+        bool ActionJSON(string Application, string Action);
 
         [OperationContract]
         [WebInvoke(
@@ -48,7 +49,7 @@ namespace DOSA
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json
             )]
-        bool ActionJSONTest(string Application, string Action, string Data);
+        bool ActionJSONTest(string Application, string Action);
 
         #endregion
 
@@ -56,24 +57,25 @@ namespace DOSA
         [OperationContract]
         [WebInvoke(
             Method = "POST",
-            UriTemplate = "{Application}/{Action}",
+            UriTemplate = "{Application}/{Action}/xml",
             RequestFormat = WebMessageFormat.Xml,
             ResponseFormat = WebMessageFormat.Xml
             )]
-        bool ActionXML(string Application, string Action, string Data);
+        bool ActionXML(string Application, string Action);
 
         [OperationContract]
         [WebInvoke(
             Method = "POST",
-            UriTemplate = "{Application}/{Action}?test",
+            UriTemplate = "{Application}/{Action}/xml?test",
             RequestFormat = WebMessageFormat.Xml,
             ResponseFormat = WebMessageFormat.Xml
             )]
-        bool ActionXMLTest(string Application, string Action, string Data);
+        bool ActionXMLTest(string Application, string Action);
 
         #endregion
 
         #endregion
 
     }
+
 }
