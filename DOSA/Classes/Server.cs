@@ -6,10 +6,11 @@ using System.Web;
 namespace DOSA
 {
     [Serializable]
-    public class User
+    public class Server
     {
         public string Name;
-        public Server HomeServer; // TODO: create DOSA Server Object
-        public int LocalID; // PK
+        public string IP;
+        public string DNS;
+        public string LocalPK;
     }
 }
