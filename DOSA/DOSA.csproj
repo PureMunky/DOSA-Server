@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ApplicationService.svc" />
+    <Content Include="Global.asax" />
     <Content Include="UserService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -67,8 +68,14 @@
     <Compile Include="ApplicationService.svc.cs">
       <DependentUpon>ApplicationService.svc</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Application.cs" />
+    <Compile Include="Classes\PassData.cs" />
+    <Compile Include="Classes\Server.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="IApplicationService.cs" />
     <Compile Include="IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
