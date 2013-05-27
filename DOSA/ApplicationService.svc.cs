@@ -11,6 +11,22 @@ namespace DOSA
     // NOTE: In order to launch WCF Test Client for testing this service, please select ApplicationService.svc or ApplicationService.svc.cs at the Solution Explorer and start debugging.
     public class ApplicationService : IApplicationService
     {
+        #region Application Passthrough
+        // Passthrough allows DOSA to handle any existing registered applications REST services.
+        // Allowing a REST call to be made without the need of defining an action.
+
+        public object PassthroughJSON(string Application, PassData DOSAData)
+        {
+            Application a = new Application();
+            a.Name = Application;
+            
+            //Application["DOSARoot"] + a.URI //TODO: fire a local REST call.
+            
+
+            return new object();
+        }
+
+        #endregion
 
         #region Application Action
 

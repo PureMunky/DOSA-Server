@@ -24,7 +24,7 @@ namespace DOSA
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json
             )]
-        bool PassthroughJSON(string Application, string Data);
+        object PassthroughJSON(string Application, PassData DOSAData);
 
         #endregion
 
